@@ -1,15 +1,20 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 axios.defaults.baseURL = "http://localhost:5001/";
 
 axios.interceptors.response.use(
   (response) => {
-    console.log("success");
     return response;
   },
   (error) => {
-    console.log("error...");
-    console.log(error);
+    const { data, status } = error.response;
+
+    switch (status) {
+      case 404:
+        toast.error(data.message);
+    }
+
     return Promise.reject(error.message);
   }
 );

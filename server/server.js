@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 
 var cors = require("cors");
 
-const port = 5000;
+const port = 5001;
 
 const productsRoutes = require("./routes/products");
 const cartsRoutes = require("./routes/carts");
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
