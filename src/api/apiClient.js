@@ -19,8 +19,16 @@ axios.interceptors.response.use(
         toast.error(data.message);
         break;
       case 403:
-        toast.error(data.message);
-        console.log(data.errors);
+        if (data.errors) {
+          const errors = [];
+
+          for (const key in data.errors) {
+            errors.push(data.errors[key]);
+          }
+
+          let result = { errors: errors, message: data.message };
+          throw result;
+        }
         break;
       case 404:
         router.navigate("/errors/not-found");
@@ -55,8 +63,7 @@ const errors = {
     methods.get("errors/bad-request").catch((error) => console.log(error)),
   get401Error: () =>
     methods.get("errors/unauthorized").catch((error) => console.log(error)),
-  get403Error: () =>
-    methods.get("errors/validation-error").catch((error) => console.log(error)),
+  get403Error: () => methods.get("errors/validation-error"),
   get404Error: () =>
     methods.get("errors/not-found").catch((error) => console.log(error)),
   get500Error: () =>
