@@ -3,67 +3,47 @@ import { toast } from "react-toastify";
 import { router } from "../App";
 
 axios.defaults.baseURL = "http://localhost:5001/";
+axios.defaults.withCredentials = true;
 
 axios.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    return response;
+  },
   (error) => {
-    // Network / CORS errors may not have a response
-    if (!error.response) {
-      toast.error("Network error");
-      return Promise.reject(error);
-    }
-
     const { data, status } = error.response;
 
-    // Handle known status codes with normalized responses
-    if (status === 400) {
-      toast.error(data?.message || "Bad request");
-      return Promise.reject(data || error);
-    }
+    switch (status) {
+      case 400:
+        toast.error(data.message);
+        break;
+      case 401:
+        toast.error(data.message);
+        break;
+      case 403:
+        if (data.errors) {
+          const errors = [];
 
-    if (status === 401) {
-      toast.error(data?.message || "Unauthorized");
-      return Promise.reject(data || error);
-    }
-
-    if (status === 403) {
-      // Normalize validation errors into a flat string array
-      if (data?.errors) {
-        const errors = [];
-        for (const key in data.errors) {
-          const val = data.errors[key];
-          if (Array.isArray(val)) {
-            errors.push(...val);
-          } else if (typeof val === "string") {
-            errors.push(val);
-          } else if (Array.isArray(val) && val.length === 0) {
-            // skip
-          } else {
-            errors.push(String(val));
+          for (const key in data.errors) {
+            errors.push(data.errors[key]);
           }
+
+          let result = { errors: errors, message: data.message };
+          throw result;
         }
-
-        const result = { errors, message: data?.message || "Validation error" };
-        return Promise.reject(result);
-      }
-
-      toast.error(data?.message || "Forbidden");
-      return Promise.reject(data || error);
+        break;
+      case 404:
+        router.navigate("/errors/not-found");
+        break;
+      case 500:
+        router.navigate("/errors/server-error", {
+          state: { error: data, status: status },
+        });
+        break;
+      default:
+        break;
     }
 
-    if (status === 404) {
-      router.navigate("/errors/not-found");
-      return Promise.reject(data || error);
-    }
-
-    if (status === 500) {
-      router.navigate("/errors/server-error", {
-        state: { error: data, status },
-      });
-      return Promise.reject(data || error);
-    }
-
-    return Promise.reject(error);
+    return Promise.reject(error.message);
   }
 );
 
@@ -91,9 +71,18 @@ const errors = {
     methods.get("errors/server-error").catch((error) => console.log(error)),
 };
 
+const cart = {
+  get: () => methods.get("carts"),
+  addItem: (productId, quantity = 1) =>
+    methods.post(`carts?productId=${productId}&quantity=${quantity}`, {}),
+  deleteItem: (productId, quantity = 1) =>
+    methods.delete(`carts?productId=${productId}&quantity=${quantity}`),
+};
+
 const requests = {
   products,
   errors,
+  cart,
 };
 
 export default requests;
