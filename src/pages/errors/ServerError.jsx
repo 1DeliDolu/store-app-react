@@ -17,7 +17,7 @@ export default function ServerErrorPage() {
       ) : (
         <>
           <Typography variant="h4">Server Error</Typography>
-          <Alert severity="error">Bilinmeyen bir hata</Alert>
+          <Alert security="error">Bilinmeyen bir hata</Alert>
         </>
       )}
       <Button
