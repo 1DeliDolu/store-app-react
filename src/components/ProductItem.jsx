@@ -2,6 +2,8 @@ import Grid from "@mui/material/Grid";
 import { Paper, Typography } from "@mui/material";
 
 export default function ProductItem({ product }) {
+  if (!product) return <p>Ürün bulunamadı.</p>;
+
   return (
     <Grid container spacing={2}>
       <Grid item lg={4} md={5} sm={6} xs={12}>
@@ -9,6 +11,8 @@ export default function ProductItem({ product }) {
           <img
             src={`http://localhost:5001/images/${product.image}`}
             style={{ width: "100%" }}
+            alt={product.title || "Ürün görseli"}
+            onError={(e) => (e.target.src = "/placeholder.png")}
           />
         </Paper>
       </Grid>
