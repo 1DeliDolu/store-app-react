@@ -1,17 +1,22 @@
-import { Grid2 } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
-export default function ProductList({ products }) {
+export default function ProductList({ products = [] }) {
+  if (!products || products.length === 0) return <p>Ürün bulunamadı.</p>;
+
   return (
-    <Grid2 container spacing={2}>
+    <Grid container spacing={2}>
       {products.map((p) => (
-        <Grid2
+        <Grid
+          item
           sx={{ backgroundColor: "primary.light" }}
           key={p.id}
-          size={{ xs: 6, md: 4, lg: 3 }}
+          xs={6}
+          md={4}
+          lg={3}
         >
           {p.title}
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   );
 }
