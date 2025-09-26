@@ -47,11 +47,17 @@ export const router = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
+  const { setCart: setCartContext } = useCartContext();
 
   useEffect(() => {
     requests.cart
       .get()
-      .then((cart) => dispatch(setCart(cart)))
+      .then((cart) => {
+        dispatch(setCart(cart));
+        try {
+          setCartContext && setCartContext(cart);
+        } catch (e) {}
+      })
       .catch((error) => console.log(error));
   }, []);
 

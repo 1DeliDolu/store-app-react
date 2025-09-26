@@ -22,12 +22,21 @@ import { setCart } from "../pages/cart/cartSlice";
 export default function ProductCard({ product }) {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const { setCart: setCartContext } = useCartContext();
 
   function handleAddItem(productId) {
     setLoading(true);
     requests.cart
       .addItem(productId)
-      .then((cart) => dispatch(setCart(cart)))
+      .then((cart) => {
+        dispatch(setCart(cart));
+        // sync context (if parts of app still read from context)
+        try {
+          setCartContext && setCartContext(cart);
+        } catch (e) {
+          // ignore if context not available
+        }
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }

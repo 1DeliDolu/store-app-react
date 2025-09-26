@@ -14,6 +14,7 @@ export default function ProductDetailsPage() {
   const [product, setProduct] = useState(null);
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const { setCart: setCartContext } = useCartContext();
 
   const cartItem = cart?.cartItems.find(
     (i) => i.product.productId == product?.id
@@ -24,7 +25,12 @@ export default function ProductDetailsPage() {
 
     requests.cart
       .addItem(productId)
-      .then((cart) => dispatch(setCart(cart)))
+      .then((cart) => {
+        dispatch(setCart(cart));
+        try {
+          setCartContext && setCartContext(cart);
+        } catch (e) {}
+      })
       .catch((error) => console.log(error))
       .finally(() => setIsAdding(false));
   }
