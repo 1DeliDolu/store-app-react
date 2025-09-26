@@ -13,7 +13,17 @@ export const addItemToCart = createAsyncThunk(
       return await requests.cart.addItem(productId, quantity);
     } catch (error) {
       console.log(error);
-      throw error;
+    }
+  }
+);
+
+export const deleteItemFromCart = createAsyncThunk(
+  "cart/deleteItemFromCart",
+  async ({ productId, quantity = 1, key = "" }) => {
+    try {
+      return await requests.cart.deleteItem(productId, quantity);
+    } catch (error) {
+      console.log(error);
     }
   }
 );
@@ -39,8 +49,21 @@ export const cartSlice = createSlice({
     builder.addCase(addItemToCart.rejected, (state) => {
       state.status = "idle";
     });
+
+    builder.addCase(deleteItemFromCart.pending, (state, action) => {
+      state.status =
+        "pendingDeleteItem" + action.meta.arg.productId + action.meta.arg.key;
+    });
+
+    builder.addCase(deleteItemFromCart.fulfilled, (state, action) => {
+      state.cart = action.payload;
+      state.status = "idle";
+    });
+
+    builder.addCase(deleteItemFromCart.rejected, (state) => {
+      state.status = "idle";
+    });
   },
 });
 
 export const { setCart } = cartSlice.actions;
-export default cartSlice.reducer;
