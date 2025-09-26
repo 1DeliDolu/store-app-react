@@ -1,13 +1,14 @@
 import {
   Button,
   CircularProgress,
+  Grid,
   Paper,
   Stack,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import { currenyTRY } from "../utils/formats";
 import ReportIcon from "@mui/icons-material/Report";
+
 export default function ProductItem({
   product,
   handleAddItem,
@@ -66,3 +67,4 @@ export default function ProductItem({
     </Grid>
   );
 }
+
