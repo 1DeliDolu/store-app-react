@@ -80,9 +80,9 @@ const cart = {
 };
 
 const account = {
-  register: (data) => methods.post("users/register", data),
-  login: (data) => methods.post("users/login", data),
-  getUser: () => methods.get("users/getUser"),
+  login: (formData) => methods.post("users/login", formData),
+  register: (formData) => methods.post("users/register", formData),
+  getUser: () => methods.post("users/getUser"),
 };
 
 const requests = {
