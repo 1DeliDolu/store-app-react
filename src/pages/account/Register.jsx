@@ -9,10 +9,10 @@ import {
   Typography,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-import requests from "../api/apiClient";
+import requests from "../../api/apiClient";
 import { useNavigate } from "react-router";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const navigate = useNavigate();
   const {
     register,
@@ -21,17 +21,17 @@ export default function LoginPage() {
   } = useForm({
     defaultValues: {
       username: "",
+      email: "",
       password: "",
     },
   });
 
   function handleForm(data) {
     requests.account
-      .login(data)
+      .register(data)
       .then((result) => {
         console.log(result);
-        localStorage.setItem("user", JSON.stringify(result));
-        navigate("/");
+        navigate("/login");
       })
       .catch((error) => console.log(error));
   }
@@ -47,7 +47,7 @@ export default function LoginPage() {
           variant="h5"
           sx={{ textAlign: "center", mb: 2 }}
         >
-          Login
+          Register
         </Typography>
         <Box
           component="form"
@@ -70,6 +70,22 @@ export default function LoginPage() {
             sx={{ mb: 2 }}
             error={!!errors.username}
             helperText={errors.username?.message}
+          />
+
+          <TextField
+            {...register("email", {
+              required: "email zorunlu alan",
+              minLength: {
+                value: 3,
+                message: "email min. 3 karakter olmalıdır.",
+              },
+            })}
+            label="Enter email"
+            size="small"
+            fullWidth
+            sx={{ mb: 2 }}
+            error={!!errors.email}
+            helperText={errors.email?.message}
           />
 
           <TextField
