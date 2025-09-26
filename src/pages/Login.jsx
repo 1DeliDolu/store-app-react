@@ -3,7 +3,6 @@ import {
   Avatar,
   Box,
   Button,
-  colors,
   Container,
   Paper,
   TextField,
@@ -12,12 +11,18 @@ import {
 import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
     defaultValues: {
       username: "",
       password: "",
     },
   });
+
+  console.log(errors);
 
   function handleForm(data) {
     console.log(data);
@@ -39,31 +44,48 @@ export default function LoginPage() {
         <Box
           component="form"
           onSubmit={handleSubmit(handleForm)}
+          noValidate
           sx={{ mb: 2 }}
         >
           <TextField
-            {...register("username")}
+            {...register("username", {
+              required: "username zorunlu alan",
+              minLength: {
+                value: 3,
+                message: "username min. 3 karakter olmalıdır.",
+              },
+            })}
             label="Enter username"
             size="small"
             fullWidth
-            required
             autoFocus
             sx={{ mb: 2 }}
+            error={!!errors.username}
+            helperText={errors.username?.message}
           />
+
           <TextField
-            {...register("password")}
+            {...register("password", {
+              required: "password zorunlu alan",
+              minLength: {
+                value: 6,
+                message: "password min. 6 karakter olmalıdır.",
+              },
+            })}
             type="password"
             label="Enter password"
             size="small"
             fullWidth
-            required
             sx={{ mb: 2 }}
+            error={!!errors.password}
+            helperText={errors.password?.message}
           />
           <Button
             type="submit"
             variant="contained"
             fullWidth
             sx={{ mt: 1 }}
+            disabled={!isValid}
             color="secondary"
           >
             Submit
