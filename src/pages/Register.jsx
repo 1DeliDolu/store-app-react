@@ -1,44 +1,64 @@
-import { LogoutOutlined } from "@mui/icons-material";
-import { useState } from "react";
+import { LockOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
+  Button,
+  colors,
   Container,
   Paper,
-  Typography,
   TextField,
-  Button,
+  Typography,
 } from "@mui/material";
 
 export default function RegisterPage() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   return (
-    <Container>
-      <h1>Register Page</h1>
-      <Paper sx={{ p: 2 }} elevation={3}>
-        <Avatar sx={{ mx: "auto", mb: 2, bgcolor: "secondary.main" }}>
-          <LogoutOutlined />
+    <Container maxWidth="xs">
+      <Paper sx={{ padding: 2 }} elevation={3}>
+        <Avatar sx={{ mx: "auto", mb: 2, color: "secondary.main" }}>
+          <LockOutlined />
         </Avatar>
         <Typography
           component="h1"
           variant="h5"
-          align="center"
-          mb={2}
-          sx={{ color: "secondary.dark" }}
+          sx={{ textAlign: "center", mb: 2 }}
         >
-          Giriş Yap
+          Register
         </Typography>
-        <Box
-          component="form"
-          sx={{ mb: 2, display: "flex", flexDirection: "column", gap: 2 }}
-        >
-          <TextField label="Username" type="text" fullWidth required />
-          <TextField label="Email" type="email" fullWidth required />
-          <TextField label="Password" type="password" fullWidth required />
-          <Button type="submit" variant="contained" color="secondary" fullWidth>
-            Kayıt Ol
+        <Box component="form" sx={{ mb: 2 }}>
+          <TextField
+            name="username"
+            label="Enter username"
+            size="small"
+            fullWidth
+            required
+            autoFocus
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            name="email"
+            label="Enter email"
+            size="small"
+            fullWidth
+            required
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            name="password"
+            type="password"
+            label="Enter password"
+            size="small"
+            fullWidth
+            required
+            sx={{ mb: 2 }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 1 }}
+            color="secondary"
+          >
+            Submit
           </Button>
         </Box>
       </Paper>

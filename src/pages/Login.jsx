@@ -1,75 +1,72 @@
-import { LogoutOutlined } from "@mui/icons-material";
+import { LockOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
+  Button,
+  colors,
   Container,
   Paper,
-  Typography,
   TextField,
-  Button,
+  Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("info@pehlione.com");
-  const [password, setPassword] = useState("12345");
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+  });
 
-  //
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ email, password });
-  };
-  const handleSubmitEmail = (e) => {
-    if (e.key === "Enter") {
-      console.log("Enter'a basıldı email: ", email);
-    }
-  };
-  const handleSubmitPassword = (e) => {
-    if (e.key === "Enter") {
-      console.log("Enter'a basıldı password: ", password);
-    }
-  };
+  function handleForm(data) {
+    console.log(data);
+  }
+
   return (
-    <Container>
-      <h1>Login Page</h1>
-      <Paper sx={{ p: 2 }} elevation={3}>
-        <Avatar sx={{ mx: "auto", mb: 2, bgcolor: "secondary.main" }}>
-          <LogoutOutlined />
+    <Container maxWidth="xs">
+      <Paper sx={{ padding: 2 }} elevation={3}>
+        <Avatar sx={{ mx: "auto", mb: 2, color: "secondary.main" }}>
+          <LockOutlined />
         </Avatar>
         <Typography
           component="h1"
           variant="h5"
-          align="center"
-          mb={2}
-          sx={{ color: "secondary.dark" }}
+          sx={{ textAlign: "center", mb: 2 }}
         >
-          Giriş Yap
+          Login
         </Typography>
         <Box
           component="form"
-          onSubmit={handleSubmit}
-          sx={{ mb: 2, display: "flex", flexDirection: "column", gap: 2 }}
+          onSubmit={handleSubmit(handleForm)}
+          sx={{ mb: 2 }}
         >
           <TextField
-            value={email}
-            onSubmit={handleSubmitEmail}
-            onChange={(e) => setEmail(e.target.value)}
-            label="Email"
-            type="email"
+            {...register("username")}
+            label="Enter username"
+            size="small"
             fullWidth
             required
+            autoFocus
+            sx={{ mb: 2 }}
           />
           <TextField
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onSubmit={handleSubmitPassword}
-            label="Password"
+            {...register("password")}
             type="password"
+            label="Enter password"
+            size="small"
             fullWidth
             required
+            sx={{ mb: 2 }}
           />
-          <Button type="submit" variant="contained" color="secondary" fullWidth>
-            Giriş Yap
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 1 }}
+            color="secondary"
+          >
+            Submit
           </Button>
         </Box>
       </Paper>
