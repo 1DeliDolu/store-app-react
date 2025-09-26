@@ -1,5 +1,5 @@
 import { Alert, Button, Paper, Typography } from "@mui/material";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation } from "react-router-dom";
 
 export default function NotFoundPage() {
   const { state } = useLocation();

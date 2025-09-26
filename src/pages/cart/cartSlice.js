@@ -28,6 +28,14 @@ export const deleteItemFromCart = createAsyncThunk(
   }
 );
 
+export const getCart = createAsyncThunk("cart/getCart", async (_, thunkAPI) => {
+  try {
+    return await requests.cart.get();
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: error.data });
+  }
+});
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -62,6 +70,10 @@ export const cartSlice = createSlice({
 
     builder.addCase(deleteItemFromCart.rejected, (state) => {
       state.status = "idle";
+    });
+
+    builder.addCase(getCart.fulfilled, (state, action) => {
+      state.cart = action.payload;
     });
   },
 });

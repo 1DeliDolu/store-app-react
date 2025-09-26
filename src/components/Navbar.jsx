@@ -1,6 +1,6 @@
 import { AppBar, Badge, Box, Button, IconButton, Toolbar } from "@mui/material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../pages/account/accountSlice";

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { CartContextProvider } from "./context/CartContext.jsx";
+import { ProductsContextProvider } from "./context/ProductsContext.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 
@@ -10,7 +11,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <CartContextProvider>
-        <App />
+        <ProductsContextProvider>
+          <App />
+        </ProductsContextProvider>
       </CartContextProvider>
     </Provider>
   </StrictMode>

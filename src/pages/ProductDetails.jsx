@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ProductItem from "../components/ProductItem";
 import Loading from "../components/Loading";
 import requests from "../api/apiClient";
