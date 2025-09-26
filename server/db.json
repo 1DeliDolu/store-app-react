@@ -78,6 +78,12 @@
     ],
     "users": [
         {
+            "id": "1f604718-6769-44ce-8a76-540b85f4e63d",
+            "username": "admin",
+            "email": "admin@pehlione.com",
+            "password": "$2a$10$gVw08R2tnSlGj7U6MXUgqOlV7wdbzwZJ/02WXlm9Fa1dyzsMyI.my"
+        },
+        {
             "id": "e10c4c6d-b804-4c1f-9dfb-9b3396a20243",
             "username": "pehlione",
             "email": "info@pehlione.com",
