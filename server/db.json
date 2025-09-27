@@ -69,50 +69,7 @@
         }
     ],
     "orders": [
-        {
-            "id": "16dede0c-081b-45e3-83c8-8f4ccf9919f0",
-            "username": "deli",
-            "customerId": "f7f71ecc-a70f-441a-84dd-b5c215654e38",
-            "firstName": "Mustafa",
-            "lastName": "Özdemir",
-            "phone": "017693153406",
-            "city": "Marburg",
-            "orderStatus": "Pending",
-            "orderDate": 1758973779771,
-            "orderItems": [
-                {
-                    "id": "ba635a06-e2ef-49b6-a195-c47988f23f04",
-                    "productId": "6",
-                    "title": "Mont 6",
-                    "price": "3400",
-                    "image": "6.jpg",
-                    "quantity": 1
-                }
-            ],
-            "total": 3400
-        },
-        {
-            "id": "dc57e47d-00e4-47fe-aa24-e6111a9b0a96",
-            "username": "deli",
-            "customerId": "f7f71ecc-a70f-441a-84dd-b5c215654e38",
-            "firstName": "Mustafa",
-            "lastName": "Özdemir",
-            "phone": "017693153406",
-            "city": "Marburg",
-            "orderStatus": "Pending",
-            "orderDate": 1758973498197,
-            "orderItems": [
-                {
-                    "id": "59d2f4d7-35d6-48e9-b8a7-6d291e2a8dd4",
-                    "productId": "4",
-                    "title": "Mont 4",
-                    "price": "1800",
-                    "image": "4.jpg",
-                    "quantity": 1
-                }
-            ],
-            "total": 1800
-        },
+        
         {
             "id": "72d81a35-6266-47e3-bebc-023c9c10e85d",
             "username": "deli",
@@ -137,28 +94,6 @@
                 }
             ],
             "total": 1800
-        },
-        {
-            "id": "e9126687-b5c4-4309-ad92-d05192c2d6d0",
-            "username": "deli",
-            "customerId": "f7f71ecc-a70f-441a-84dd-b5c215654e38",
-            "firstName": "Mustafa",
-            "lastName": "Özdemir",
-            "phone": "017693153406",
-            "city": "Marburg",
-            "orderStatus": "Pending",
-            "orderDate": 1758972020024,
-            "orderItems": [
-                {
-                    "id": "4c4e0cbf-8a9d-421c-8f2a-e123aadd5511",
-                    "productId": "6",
-                    "title": "Mont 6",
-                    "price": "3400",
-                    "image": "6.jpg",
-                    "quantity": 1
-                }
-            ],
-            "total": 3400
         }
     ]
 }
