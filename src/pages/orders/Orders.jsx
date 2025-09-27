@@ -16,6 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import requests from "../../api/apiClient";
 import Loading from "../../components/Loading";
 import { currenyTRY } from "../../utils/formats";
@@ -58,7 +59,27 @@ export default function OrdersPage() {
   if (loading) return <Loading />;
 
   if (!orders || orders.length === 0) {
-    return <Alert severity="warning">Henüz siparişiniz yok</Alert>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 16,
+          marginTop: 24,
+        }}
+      >
+        <Alert severity="warning">Henüz siparişiniz yok</Alert>
+        <Button
+          component={Link}
+          to="/products"
+          variant="contained"
+          color="secondary"
+        >
+          Ürünlere Git
+        </Button>
+      </div>
+    );
   }
   return (
     <>
