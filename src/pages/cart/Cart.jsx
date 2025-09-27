@@ -36,8 +36,29 @@ export default function CartPage() {
   const tax = subTotal * 0.2;
   const total = subTotal + tax;
 
-  if (!cart || cart.cartItems.length === 0)
-    return <Alert severity="warning">Sepetinizde ürün yok</Alert>;
+  if (!cart || cart.cartItems.length === 0) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 2,
+          mt: 4,
+        }}
+      >
+        <Alert severity="warning">Sepetinizde ürün yok</Alert>
+        <Button
+          component={Link}
+          to="/products"
+          variant="contained"
+          color="secondary"
+        >
+          Ürünlere Git
+        </Button>
+      </Box>
+    );
+  }
 
   return (
     <>
