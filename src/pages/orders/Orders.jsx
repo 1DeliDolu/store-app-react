@@ -123,7 +123,10 @@ export default function OrdersPage() {
               {selectedOrder?.phone}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              {selectedOrder?.address} {selectedOrder?.city}
+              {selectedOrder?.street} {selectedOrder?.houseNumber}
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              {selectedOrder?.postalCode} {selectedOrder?.city}
             </Typography>
           </Paper>
           <TableContainer component={Paper}>

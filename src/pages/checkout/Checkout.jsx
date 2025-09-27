@@ -10,6 +10,7 @@ import {
   Stepper,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router";
 import Info from "./Info";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
@@ -95,6 +96,8 @@ export default function CheckoutPage() {
                   sx={{ alignSelf: "start" }}
                   variant="contained"
                   color="secondary"
+                  component={Link}
+                  to="/orders"
                 >
                   Siparişleri Listele
                 </Button>

@@ -14,7 +14,10 @@ export default function Review() {
         </Typography>
         <Typography gutterBottom>{getValues("phone")}</Typography>
         <Typography gutterBottom>
-          {getValues("address")} / {getValues("city")}
+          {getValues("street")} {getValues("houseNumber")}
+        </Typography>
+        <Typography gutterBottom>
+          {getValues("postalCode")} {getValues("city")}
         </Typography>
       </Box>
 
