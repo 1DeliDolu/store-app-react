@@ -1,1 +1,120 @@
-{"products":[{"id":"1","title":"Mont 1","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"1.jpg","price":"2300"},{"id":"2","title":"Mont 2","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"2.jpg","price":"2100"},{"id":"3","title":"Mont 3","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"3.jpg","price":"2400"},{"id":"4","title":"Mont 4","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"4.jpg","price":"1800"},{"id":"5","title":"Mont 5","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"5.jpg","price":"3200"},{"id":"6","title":"Mont 6","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.","image":"6.jpg","price":"3400"}],"carts":[{"id":"da81ea9d-83bc-4e0d-8653-a06bc29e9ee1","customerId":"e30ac1c0-32f5-4e29-b811-7a9af68c2a84","cartItems":[]},{"id":"0d66fd55-7728-4dfb-888c-8384e66af991","customerId":"f7f71ecc-a70f-441a-84dd-b5c215654e38","cartItems":[{"id":"ce679712-e961-4944-b6c3-2133f3960eb3","productId":"3","quantity":2}]},{"id":"80664266-33a2-4bf5-a4e9-5c89bbcd975f","customerId":"ed4afb1f-15af-4a85-8eb8-2427b01394da","cartItems":[]}],"users":[{"id":"3bb3ca72-6849-4e6d-b6ac-3f2ce5f437d0","username":"admin2","email":"admin2@pehlione.com","password":"$2a$10$dXTYjhePk/0EbhtFfFgxd.Ovvfg5IGTT.BcZpABMpL7Rn.f0ixxQi"},{"id":"1f604718-6769-44ce-8a76-540b85f4e63d","username":"admin","email":"admin@pehlione.com","password":"$2a$10$gVw08R2tnSlGj7U6MXUgqOlV7wdbzwZJ/02WXlm9Fa1dyzsMyI.my"},{"id":"e10c4c6d-b804-4c1f-9dfb-9b3396a20243","username":"pehlione","email":"info@pehlione.com","password":"$2a$10$/xUsLl6c8kaMHL5RjAu8GeSCmnzVoiQUBzx9BpMad72ajCaJGNXvq"}],"orders":[]}
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Mont 1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "1.jpg",
+            "price": "2300"
+        },
+        {
+            "id": "2",
+            "title": "Mont 2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "2.jpg",
+            "price": "2100"
+        },
+        {
+            "id": "3",
+            "title": "Mont 3",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "3.jpg",
+            "price": "2400"
+        },
+        {
+            "id": "4",
+            "title": "Mont 4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "4.jpg",
+            "price": "1800"
+        },
+        {
+            "id": "5",
+            "title": "Mont 5",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "5.jpg",
+            "price": "3200"
+        },
+        {
+            "id": "6",
+            "title": "Mont 6",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero repudiandae quod omnis mollitia nam quo, quisquam quidem consectetur molestias ullam id aliquid, nobis, tempore repellendus iure. Vitae, vel fuga.",
+            "image": "6.jpg",
+            "price": "3400"
+        }
+    ],
+    "carts": [
+        {
+            "id": "da81ea9d-83bc-4e0d-8653-a06bc29e9ee1",
+            "customerId": "e30ac1c0-32f5-4e29-b811-7a9af68c2a84",
+            "cartItems": []
+        },
+        {
+            "id": "0d66fd55-7728-4dfb-888c-8384e66af991",
+            "customerId": "f7f71ecc-a70f-441a-84dd-b5c215654e38",
+            "cartItems": [
+                {
+                    "id": "bd2b71a3-8666-4af1-9ada-34276550e583",
+                    "productId": "5",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": "80664266-33a2-4bf5-a4e9-5c89bbcd975f",
+            "customerId": "ed4afb1f-15af-4a85-8eb8-2427b01394da",
+            "cartItems": []
+        }
+    ],
+    "users": [
+        {
+            "id": "fa33a613-3507-4c1b-97e5-e6c8fc064738",
+            "username": "deli",
+            "email": "deli@pehlione.com",
+            "password": "$2a$10$8qAySuo.RmezfyloUJ9SqeydLjyITreUAxC6SYXTF48ZoBQmv4sry"
+        },
+        {
+            "id": "3bb3ca72-6849-4e6d-b6ac-3f2ce5f437d0",
+            "username": "admin2",
+            "email": "admin2@pehlione.com",
+            "password": "$2a$10$dXTYjhePk/0EbhtFfFgxd.Ovvfg5IGTT.BcZpABMpL7Rn.f0ixxQi"
+        },
+        {
+            "id": "1f604718-6769-44ce-8a76-540b85f4e63d",
+            "username": "admin",
+            "email": "admin@pehlione.com",
+            "password": "$2a$10$gVw08R2tnSlGj7U6MXUgqOlV7wdbzwZJ/02WXlm9Fa1dyzsMyI.my"
+        },
+        {
+            "id": "e10c4c6d-b804-4c1f-9dfb-9b3396a20243",
+            "username": "pehlione",
+            "email": "info@pehlione.com",
+            "password": "$2a$10$/xUsLl6c8kaMHL5RjAu8GeSCmnzVoiQUBzx9BpMad72ajCaJGNXvq"
+        }
+    ],
+    "orders": [
+        {
+            "id": "6456686b-2126-4af1-acb5-51bd02956753",
+            "username": "admin",
+            "customerId": "f7f71ecc-a70f-441a-84dd-b5c215654e38",
+            "firstName": "Mustafa",
+            "lastName": "Özdemir",
+            "phone": "176931534",
+            "city": "Marburg",
+            "address": "Am Richtsberg 20\n35039 Marburg",
+            "orderStatus": "Pending",
+            "orderDate": 1758968349787,
+            "orderItems": [
+                {
+                    "id": "0be323dc-d080-41af-afa0-1b899c216072",
+                    "productId": "4",
+                    "title": "Mont 4",
+                    "price": "1800",
+                    "image": "4.jpg",
+                    "quantity": 1
+                }
+            ],
+            "total": 1800
+        }
+    ]
+}

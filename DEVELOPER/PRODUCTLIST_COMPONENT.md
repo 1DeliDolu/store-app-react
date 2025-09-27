@@ -82,21 +82,21 @@ Mevcut kod (özet):
 Mevcut kod (özet):
 
 ```jsx
-import { Grid2 } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export default function ProductList({ products }) {
   return (
-    <Grid2 container spacing={2}>
+    <Grid container spacing={2}>
       {products.map((p) => (
-        <Grid2
+        <Grid
           sx={{ backgroundColor: "primary.light" }}
           key={p.id}
           size={{ xs: 6, md: 4, lg: 3 }}
         >
           {p.title}
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   );
 }
 ```
@@ -107,7 +107,7 @@ export default function ProductList({ products }) {
 
 ### Davranış
 
-- `Grid2` (MUI v5+ yeni Grid API) ile responsive grid hücreleri oluşturuluyor.
+- `Grid` (MUI v5+ yeni Grid API) ile responsive grid hücreleri oluşturuluyor.
 - Her ürün için `key={p.id}` var — bu iyi.
 
 ### Potansiyel problemler / edge cases
@@ -137,16 +137,16 @@ export default function ProductList({ products = [] }) {
   if (products.length === 0) return <p>Ürün bulunamadı.</p>;
 
   return (
-    <Grid2 container spacing={2}>
+    <Grid container spacing={2}>
       {products.map((p) => (
-        <Grid2 key={p.id} size={{ xs: 6, md: 4, lg: 3 }}>
+        <Grid key={p.id} size={{ xs: 6, md: 4, lg: 3 }}>
           <article>
             <h3>{p.title}</h3>
             <p>{p.price ? `${p.price} ₺` : null}</p>
           </article>
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   );
 }
 ```

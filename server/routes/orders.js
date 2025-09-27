@@ -42,11 +42,43 @@ router.get("/:id", verifyToken, async (req, res, next) => {
 });
 
 router.post("/", verifyToken, async (req, res, next) => {
+  const {
+    firstname,
+    lastname,
+    phone,
+    street,
+    houseNumber,
+    postalCode,
+    city,
+    ...rest
+  } = req.body;
+
   const order = {
-    ...req.body,
+    ...rest,
+    firstname,
+    lastname,
+    phone,
+    street,
+    houseNumber,
+    postalCode,
+    city,
     username: req.user.username,
     customerId: req.cookies.customerId,
   };
+
+  // basic validation for address fields
+  if (
+    !firstname ||
+    !lastname ||
+    !street ||
+    !houseNumber ||
+    !postalCode ||
+    !city
+  ) {
+    return res
+      .status(400)
+      .json({ message: "Missing required customer or address fields" });
+  }
 
   try {
     const id = await add(order);

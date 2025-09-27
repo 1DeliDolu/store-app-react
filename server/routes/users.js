@@ -54,22 +54,64 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/register", async (req, res, next) => {
   try {
-    const user = await get(req.body.username);
+    const {
+      username,
+      email,
+      password,
+      firstname,
+      lastname,
+      street,
+      houseNumber,
+      postalCode,
+      city,
+      phone,
+    } = req.body;
+
+    // basic required fields validation
+    if (
+      !username ||
+      !email ||
+      !password ||
+      !firstname ||
+      !lastname ||
+      !street ||
+      !houseNumber ||
+      !postalCode ||
+      !city
+    ) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    // German postal code validation (5 digits)
+    if (!/^\d{5}$/.test(String(postalCode))) {
+      return res.status(400).json({ message: "Invalid postal code (PLZ)" });
+    }
+
+    const user = await get(username);
 
     if (user) {
       return res.status(400).json({ message: "Username already exists" });
     }
 
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = {
-      username: req.body.username,
-      email: req.body.email,
+      username,
+      email,
       password: hashedPassword,
+      firstname,
+      lastname,
+      street,
+      houseNumber,
+      postalCode,
+      city,
+      phone: phone || null,
     };
 
     await add(newUser);
-    res.status(201).json({ message: "User saved." });
+    // don't return password back to client
+    const { password: _pw, ...safeUser } = newUser;
+    res.status(201).json({ message: "User saved.", user: safeUser });
   } catch (error) {
     next(error);
   }
@@ -83,9 +125,9 @@ router.get("/getUser", verifyToken, async (req, res, next) => {
       return res.status(401).json({ error: "User not found" });
     }
 
-    res
-      .status(200)
-      .json({ username: req.user.username, token: req.user.token });
+    // return safe user profile (exclude password)
+    const { password: _pwd, ...safe } = user;
+    res.status(200).json({ ...safe, token: req.user.token });
   } catch (error) {
     next(error);
   }

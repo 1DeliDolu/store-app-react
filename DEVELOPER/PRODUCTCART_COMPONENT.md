@@ -35,8 +35,8 @@ ProductCard, yukarıdaki alanların en az `id`, `title`, `price` ve `image` alan
 - Sorumluluk: `products` dizisini alıp grid düzeninde `ProductCard`'ları render etmek.
 - Önemli noktalar:
   - `key={p.id}` kullanımı doğru ve React performansı için gerekli (ancak `id` her zaman benzersiz olmalı).
-  - Kodda kullanılan Grid bileşeni (`Grid2` veya `Grid`) MUI sürümüne göre doğru import edilmelidir:
-    - Eğer projenizde MUI v5 ve `Grid2` kullanılıyorsa doğru import genellikle `import Grid2 from '@mui/material/Unstable_Grid2';` şeklindedir.
+  - Kodda kullanılan Grid bileşeni (`Grid` veya `Grid`) MUI sürümüne göre doğru import edilmelidir:
+    - Eğer projenizde MUI v5 ve `Grid` kullanılıyorsa doğru import genellikle `import Grid from '@mui/material/Unstable_Grid';` şeklindedir.
     - Alternatif ve stabil seçenek `import Grid from '@mui/material/Grid';` ve `item`, `xs`, `md`, `lg` prop'larını kullanmaktır.
   - `products` null/undefined olursa `products.map` runtime hatası verir. Güvenli kullanım için `products = []` veya çağıran tarafın garanti etmesi gerekir.
 
@@ -109,7 +109,7 @@ export const currenyTRY = new Intl.NumberFormat("tr-TR", {
 ## Hızlı checklist (hızlı düzeltmeler)
 
 1. `ProductList`'e güvenli default: `function ProductList({ products = [] })`.
-2. Grid import sorununu düzelt: eğer `Grid2` kullanacaksanız `import Grid2 from '@mui/material/Unstable_Grid2';` veya stabil `Grid` kullanın: `import Grid from '@mui/material/Grid';` + `item` prop.
+2. Grid import sorununu düzelt: eğer `Grid` kullanacaksanız `import Grid from '@mui/material/Unstable_Grid';` veya stabil `Grid` kullanın: `import Grid from '@mui/material/Grid';` + `item` prop.
 3. `formats.js` içindeki `currenyTRY` isimlendirme hatasını değerlendirin.
 4. `ProductCard` için görsel fallback, `alt`/`aria-label`, ve `price` güvenliği ekleyin.
 5. Sepet/favori işlemlerini gerçek state ile bağlayın.

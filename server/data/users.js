@@ -23,9 +23,19 @@ async function get(username) {
 
 async function add(user) {
   const data = await readData();
+  // ensure stored user keeps address fields and other props
   data.users.unshift({
     id: generateId(),
-    ...user,
+    username: user.username,
+    email: user.email,
+    password: user.password,
+    firstname: user.firstname || null,
+    lastname: user.lastname || null,
+    street: user.street || null,
+    houseNumber: user.houseNumber || null,
+    postalCode: user.postalCode || null,
+    city: user.city || null,
+    phone: user.phone || null,
   });
   await writeData(data);
 }
