@@ -1,5 +1,5 @@
 import { Alert, Button, Paper, Typography } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router";
 
 export default function ServerErrorPage() {
   const { state } = useLocation();
