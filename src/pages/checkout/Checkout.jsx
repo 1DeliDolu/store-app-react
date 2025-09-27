@@ -1,13 +1,13 @@
 import {
   Box,
   Button,
-  Grid2,
   Paper,
   Step,
   StepLabel,
   Stepper,
   Typography,
 } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Info from "./Info";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
@@ -40,14 +40,16 @@ export default function CheckoutPage() {
   }
   return (
     <Paper>
-      <Grid2 container spacing={3}>
-        <Grid2
-          size={4}
+      <Grid container spacing={3}>
+        <Grid
+          item
+          md={4}
+          xs={12}
           sx={{ p: 3, borderRight: "1px solid", borderColor: "divider" }}
         >
           <Info />
-        </Grid2>
-        <Grid2 size={8} sx={{ p: 3 }}>
+        </Grid>
+        <Grid item md={8} xs={12} sx={{ p: 3 }}>
           <Stepper activeStep={activeStep} sx={{ height: 40, mb: 4 }}>
             {steps.map((label) => (
               <Step key={label} sx={{ color: "secondary" }}>
@@ -91,8 +93,8 @@ export default function CheckoutPage() {
               </Box>
             </>
           )}
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
     </Paper>
   );
 }
