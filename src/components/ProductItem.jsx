@@ -1,14 +1,13 @@
 import {
   Button,
   CircularProgress,
-  Grid,
+  Grid2,
   Paper,
   Stack,
   Typography,
 } from "@mui/material";
 import { currenyTRY } from "../utils/formats";
 import ReportIcon from "@mui/icons-material/Report";
-
 export default function ProductItem({
   product,
   handleAddItem,
@@ -16,16 +15,16 @@ export default function ProductItem({
   isAdding,
 }) {
   return (
-    <Grid container spacing={2}>
-      <Grid item lg={4} md={5} sm={6} xs={12}>
+    <Grid2 container spacing={2}>
+      <Grid2 size={{ lg: 4, md: 5, sm: 6, xs: 12 }}>
         <Paper variant="outlined" sx={{ p: 3 }}>
           <img
             src={`http://localhost:5001/images/${product.image}`}
             style={{ width: "100%" }}
           />
         </Paper>
-      </Grid>
-      <Grid item lg={8} md={7} sm={6} xs={12}>
+      </Grid2>
+      <Grid2 size={{ lg: 8, md: 7, sm: 6, xs: 12 }}>
         <Paper variant="outlined" sx={{ p: 3 }}>
           <Typography component="h1" variant="h4" color="secondary.dark">
             {product.title}
@@ -63,8 +62,7 @@ export default function ProductItem({
             {isAdding && <CircularProgress size="20px" />}
           </Stack>
         </Paper>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 }
-
