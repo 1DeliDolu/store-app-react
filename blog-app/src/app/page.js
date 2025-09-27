@@ -1,9 +1,6 @@
-
-
 export default function Home() {
-  return (
-    <div>
-      <h1>Willkommen bei Next.js!</h1>
-    </div>
-  );
+  return <h1>Home</h1>;
 }
+
+// localhost      => page.js
+// localhost/blog => page.js

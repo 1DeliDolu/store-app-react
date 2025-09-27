@@ -1,11 +1,15 @@
-import React from 'react'
+export const metadata = {
+  title: "About",
+};
 
-export default async function Page(params) {
-  const blog_id = await params.id
-  return (
-    <div>
-        <h1>About Page</h1>
-        <p>Blog ID: {blog_id}</p>
-    </div>
-  )
+export default function Page() {
+  return <h1>About</h1>;
 }
+
+// localhost              => page.js
+// localhost/blogs        => page.js
+// localhost/blog/1       => page.js
+// localhost/blog/2       => page.js
+// localhost/about        => page.js
+// localhost/account/login        => page.js
+// localhost/account/register        => page.js
