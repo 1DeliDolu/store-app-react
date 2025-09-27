@@ -12,7 +12,7 @@ async function readData() {
 }
 
 async function writeData(data) {
-  await fs.writeFile("db.json", JSON.stringify(data));
+  await fs.writeFile("db.json", JSON.stringify(data, null, 2));
 }
 
 async function getAll(username) {
@@ -53,6 +53,16 @@ async function add(order) {
     houseNumber: order.houseNumber || null,
     postalCode: order.postalCode || null,
     city: order.city,
+    // payment info (do not store CVV)
+    payment: {
+      cardName: order.cardname || null,
+      cardLast4: order.cardnumber ? String(order.cardnumber).slice(-4) : null,
+      cardMasked: order.cardnumber
+        ? String(order.cardnumber).replace(/\d(?=\d{4})/g, "*")
+        : null,
+      expiryMonth: order.expiryMonth || null,
+      expiryYear: order.expiryYear || null,
+    },
     orderStatus: "Pending",
     orderDate: Date.now(),
     orderItems: [],

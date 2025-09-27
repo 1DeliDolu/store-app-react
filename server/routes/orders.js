@@ -50,6 +50,10 @@ router.post("/", verifyToken, async (req, res, next) => {
     houseNumber,
     postalCode,
     city,
+    cardname,
+    cardnumber,
+    expiryMonth,
+    expiryYear,
     ...rest
   } = req.body;
 
@@ -62,6 +66,10 @@ router.post("/", verifyToken, async (req, res, next) => {
     houseNumber,
     postalCode,
     city,
+    cardname,
+    cardnumber,
+    expiryMonth,
+    expiryYear,
     username: req.user.username,
     customerId: req.cookies.customerId,
   };

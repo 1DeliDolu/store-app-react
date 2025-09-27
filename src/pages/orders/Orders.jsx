@@ -133,9 +133,19 @@ export default function OrdersPage() {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
+           
           <Paper sx={{ p: 3, mb: 3 }}>
             <Typography variant="h6" gutterBottom>
-              Teslimat Bilgileri
+              Sipariş Detayları
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Order Id:</strong> {selectedOrder?.id}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>Username:</strong> {selectedOrder?.username}
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              <strong>CustomerId:</strong> {selectedOrder?.customerId}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               {selectedOrder?.firstName} {selectedOrder?.lastName}
@@ -143,11 +153,35 @@ export default function OrdersPage() {
             <Typography variant="subtitle1" gutterBottom>
               {selectedOrder?.phone}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              {selectedOrder?.street} {selectedOrder?.houseNumber}
+            {/* Address lines: structured first, fall back to legacy address or city */}
+            {selectedOrder?.street || selectedOrder?.houseNumber ? (
+              <Typography variant="subtitle1" gutterBottom>
+                {`${selectedOrder?.street || ""} ${
+                  selectedOrder?.houseNumber || ""
+                }`.trim()}
+              </Typography>
+            ) : selectedOrder?.address ? (
+              <Typography variant="subtitle1" gutterBottom>
+                {selectedOrder.address}
+              </Typography>
+            ) : null}
+
+            {selectedOrder?.postalCode || selectedOrder?.city ? (
+              <Typography variant="subtitle1" gutterBottom>
+                {`${selectedOrder?.postalCode || ""} ${
+                  selectedOrder?.city || ""
+                }`.trim()}
+              </Typography>
+            ) : null}
+
+            <Typography variant="body2" gutterBottom>
+              <strong>Status:</strong> {selectedOrder?.orderStatus}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              {selectedOrder?.postalCode} {selectedOrder?.city}
+            <Typography variant="body2" gutterBottom>
+              <strong>Order Date:</strong>{" "}
+              {selectedOrder?.orderDate
+                ? new Date(selectedOrder.orderDate).toLocaleString()
+                : "-"}
             </Typography>
           </Paper>
           <TableContainer component={Paper}>
