@@ -1,7 +1,16 @@
-const sqlite3 = require("sqlite3").verbose();
+import sqlite3 from "sqlite3";
+import { fileURLToPath } from "url";
+import path from "path";
 
-const db = new sqlite3.Database(
-  "./blog.db",
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const dbPath = path.join(__dirname, "./blog.db");
+
+const sqlite = sqlite3.verbose();
+
+const db = new sqlite.Database(
+  dbPath,
   sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
   (err) => {
     if (err) {

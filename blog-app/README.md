@@ -1,4 +1,10 @@
-tags: nextjs, react
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin-bottom:12px">
+	<a href="https://nextjs.org" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Next.js-13.x-black?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js"/></a>
+	<a href="https://reactjs.org" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React"/></a>
+	<a href="https://www.sqlite.org" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/SQLite-Local-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite"/></a>
+	<a href="https://nodejs.org" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Node.js-18.x-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js"/></a>
+	<a href="https://github.com/1DeliDolu/store-app-react" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/stars/1DeliDolu/store-app-react?style=social" alt="GitHub stars"/></a>
+</div>
 
 # Blog App (Next.js) — English
 
