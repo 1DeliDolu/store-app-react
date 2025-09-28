@@ -117,7 +117,7 @@ export default function Page() {
 Kullanıcı uygulamanızın kök dizinine (`/`) girdiğinde hem `layout.tsx` hem de `page.tsx` render edilecektir.
 
 
-![alt text](image.png)
+![alt text](5/image.png)
 
 # İyi Bilmekte Fayda Var
 
@@ -178,7 +178,7 @@ VS Code’da eklentiyi etkinleştirmek için:
 3. “**Use Workspace Version**” seçeneğini seçin
 
 
-![alt text](image-1.png)
+![alt text](5/image-1.png)
 
 # Daha Fazla Bilgi
 

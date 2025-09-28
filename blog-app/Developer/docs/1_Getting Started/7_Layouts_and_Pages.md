@@ -11,9 +11,11 @@ Bir **sayfa**, belirli bir route üzerinde render edilen kullanıcı arayüzüd�
 app/page.tsx
 TypeScript
 
+````
 export default function Page() {
   return <h1>Hello Next.js!</h1>
 }
+````
 
 ![alt text](7/image-1.png)
 
