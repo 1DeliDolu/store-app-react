@@ -86,3 +86,6 @@ Next.js uygulamanızı nasıl dağıtacağınızı öğrenin.
 ### Yükseltme
 
 Next.js uygulamanızı en son sürüme veya canary sürümüne nasıl yükselteceğinizi öğrenin.
+
+
+![](assets/2025-09-28-13-34-04.png)

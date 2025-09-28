@@ -137,3 +137,6 @@ Next.js App Router ile tam kapsamlı web uygulamaları oluşturmayı öğrenin.
   </div>
 </body>
 </html>
+
+
+![](assets/2025-09-28-13-24-25.png)

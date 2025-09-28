@@ -25,3 +25,5 @@ Yerleşik gezinme optimizasyonlarının (prefetching, prerendering ve client-sid
 ### Sunucu ve İstemci Bileşenleri
 
 Uygulamanızın parçalarını sunucuda veya istemcide işlemek için **React Server** ve **Client Components**’i nasıl kullanabileceğinizi öğrenin.
+
+![](assets/2025-09-28-13-33-55.png)

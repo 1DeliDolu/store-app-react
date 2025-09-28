@@ -62,7 +62,7 @@ Bir rotanın ne kadarının önyükleneceği statik veya dinamik olmasına bağl
 
 Dinamik rotaların önyüklemesini atlayarak veya kısmen yaparak Next.js, kullanıcıların hiç ziyaret etmeyeceği rotalar için gereksiz sunucu yükünden kaçınır. Ancak, gezinmeden önce sunucu yanıtını beklemek kullanıcıya uygulamanın yanıt vermediği izlenimi verebilir.
 
-![alt text](image-5.png)
+![alt text](8/image-1.png)
 
 ## Gezinme deneyimini geliştirmek için: Akış (Streaming)
 

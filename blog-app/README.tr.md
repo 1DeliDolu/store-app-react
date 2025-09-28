@@ -1,96 +1,97 @@
 tags: nextjs, react
 
-# Blog App (Next.js) — English
+# Blog App (Next.js) — Türkçe
 
-Modern, simple, and locally runnable Next.js blog application.
+Bu depo, Next.js (App Router) kullanılarak hazırlanmış örnek bir blog uygulamasıdır. Projede küçük bir SQLite veritabanı (`blog.db`) ve bazı yardımcı betikler (`scripts/seed-db.js`, `scripts/check-db.js`) bulunmaktadır. Aşağıda proje hakkında hızlı ve pratik bilgiler yer almaktadır.
 
-This repository is an example blog built with Next.js (App Router). It includes a small SQLite database (`blog.db`) and helper scripts in `scripts/` (e.g. `seed-db.js`, `check-db.js`).
+## Öne çıkanlar
 
-## Highlights
+- Next.js App Router düzeni (server ve client bileşen karışımı)
+- Yerel geliştirme için hızlı kurulum sağlayan SQLite veri deposu
+- Örnek sayfalar: blog listesi, tekil blog sayfası, kullanıcı sayfaları, basit oturum (login/register) iskeleti
 
-- Next.js App Router structure (server/client components)
-- Simple SQLite data store (fast local setup)
-- Example pages: blog list, single blog, user pages, basic auth skeleton (login/register)
-
-## Tech stack
+## Teknolojiler
 
 - Next.js (App Router)
 - React
-- SQLite (local `blog.db` file)
+- SQLite (yerel `blog.db` dosyası)
 - Node.js (npm)
 
-## Requirements
+## Gereksinimler
 
-- Node.js LTS (18+ recommended)
-- npm or a compatible package manager
+- Node.js LTS (18 veya üzeri önerilir)
+- npm veya uyumlu bir paket yöneticisi
 
-## Quick start
+## Hızlı başlangıç
 
-1. Clone or download the repo.
-2. Install dependencies:
+1. Depoyu klonlayın veya indirin.
+2. Bağımlılıkları yükleyin:
 
 ```bash
 npm install
 ```
 
-3. (Optional) Seed the database with sample data:
+3. (İsteğe bağlı) Örnek verileri veritabanına ekleyin:
 
 ```bash
 node scripts/seed-db.js
 ```
 
-4. Start the development server:
+4. Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
+Tarayıcıda http://localhost:3000 adresini açın.
 
-Note: Database connection logic lives in `connect.js`. If you need a different database or environment configuration, edit that file.
+Not: Veritabanı bağlantı/konfigürasyonu `connect.js` dosyasında bulunur. Farklı bir veritabanı veya ortam değişkenleri kullanacaksanız, bu dosyayı düzenleyin.
 
-## Available scripts
+## Mevcut script'ler
 
-- `npm run dev` — Start development server
-- `npm run build` — Build for production (Next.js)
-- `npm run start` — Start production server (run after `build`)
-- `node scripts/seed-db.js` — Insert sample data into the database
-- `node scripts/check-db.js` — Check database and connection
+- `npm run dev` — Geliştirme sunucusunu başlatır
+- `npm run build` — Üretim için derleme (Next.js)
+- `npm run start` — Üretim sunucusunu çalıştırma (önce `build` çalıştırılmalıdır)
+- `node scripts/seed-db.js` — Örnek verileri veritabanına ekler
+- `node scripts/check-db.js` — Veritabanı ve bağlantı kontrolü yapar
 
-(If your `package.json` uses different script names, use those instead.)
+(Eğer `package.json` içinde farklı script isimleri varsa, kendi proje ayarınıza göre komutları kullanın.)
 
-## Project structure (overview)
+## Proje yapısı (özet)
 
-- `app/` — Next.js App Router sources (pages, layouts, api)
-- `components/` — Reusable React components
-- `public/` — Static assets (images, icons)
-- `scripts/` — Utility scripts (seed, check-db)
-- `blog.db` — Local SQLite database file
-- `connect.js` — Database connection helper
+- `app/` — Next.js App Router kaynakları (sayfalar, layout, api)
+- `components/` — Yeniden kullanılabilir React bileşenleri
+- `public/` — Statik dosyalar (resimler, ikonlar)
+- `scripts/` — Yardımcı betikler (seed-db, check-db vb.)
+- `blog.db` — Yerel SQLite veritabanı dosyası
+- `connect.js` — Veritabanı bağlantı yardımcı dosyası
 
-## Deployment
+## Deployment (yayına alma)
 
-This project works well with Vercel. To deploy:
+Bu proje Vercel ile uyumludur. Yayına almak için:
 
-1. Connect the repo to Vercel.
-2. Build command: `npm run build`, Start command: `npm run start`.
+1. Depoyu Vercel'e bağlayın.
+2. Build komutu: `npm run build`, Start komutu: `npm run start`.
 
-You can also deploy with Docker or any hosting provider that supports Next.js.
+Ayrıca Docker veya Next.js destekleyen herhangi bir hosting sağlayıcısında da dağıtabilirsiniz.
 
-## Contributing
+## Katkıda bulunma
 
-Send pull requests for small fixes, documentation updates, and improvements. For larger changes, open an issue first to discuss.
+Küçük düzeltmeler, dokümantasyon iyileştirmeleri ve hata düzeltmeleri için pull request gönderebilirsiniz. Daha büyük değişiklikler için önce bir issue açıp tartışmanız önerilir.
 
-## Tips & common issues
+## İpuçları ve sık karşılaşılan durumlar
 
-- If pages don't update, restart the dev server (`npm run dev`).
-- Remove `blog.db` and re-run `node scripts/seed-db.js` to reset sample data.
+- Sayfalar güncellenmiyorsa geliştirme sunucusunu yeniden başlatın: `npm run dev`.
+- Örnek veritabanını sıfırlamak için `blog.db` dosyasını silip `node scripts/seed-db.js` çalıştırın.
+- Bağlantı problemleri için `node scripts/check-db.js` ile kontrol edin.
 
-## License
+## Lisans
 
-If there's no `LICENSE` file in the repo root, add an appropriate license (for example MIT).
+Projede bir `LICENSE` dosyası yoksa uygun bir lisans (ör. MIT) eklemeniz önerilir.
 
 ---
+
+## Eğer bu README'e eklememi istediğiniz başka bir bölüm (API dökümü, environment değişkenleri listesi, örnek payloadlar, test komutları vb.) varsa belirtin; hemen Türkçe olarak ekleyeyim.
 
 Below is the Turkish version of the README.
 
